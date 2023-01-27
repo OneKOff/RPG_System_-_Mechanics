@@ -18,10 +18,10 @@ public class ItemSlot : MonoBehaviour
     
     private void OnItemReceived(ItemIcon iIcon)
     {
-        ItemReceived?.Invoke(iIcon.Type, _id);
+        ItemReceived?.Invoke(iIcon.ItemStack.ItemType, _id);
     }
     private void OnItemLost(ItemIcon iIcon)
     {
-        ItemLost?.Invoke(iIcon.Type, _id);
+        ItemLost?.Invoke(iIcon.ItemStack.ItemType, _id);
     }
 }

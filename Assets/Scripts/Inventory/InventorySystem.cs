@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
+    [SerializeField] private ItemListConfig itemList;
     [SerializeField] private ItemSlot[] itemSlots;
 
     private void OnEnable()

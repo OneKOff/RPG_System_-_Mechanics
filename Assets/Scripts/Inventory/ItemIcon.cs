@@ -9,19 +9,17 @@ public class ItemIcon : MonoBehaviour, IPointerDownHandler, IPointerMoveHandler,
 {
     [SerializeField] private Image itemSpriteImage;
     [SerializeField] private TextMeshProUGUI itemCountText;
-    
-    [SerializeField] private ItemType type;
-    public ItemType Type => type;
-    [SerializeField] private int count;
-    public int Count => count;
+
+    [SerializeField] private ItemStack itemStack;
+    public ItemStack ItemStack => itemStack;
 
     public void AssignUIElementsAndUpdate(Image sprImg, TextMeshProUGUI cntTxt)
     {
         itemSpriteImage = sprImg;
         itemCountText = cntTxt;
 
-        itemSpriteImage.sprite = type.ItemSprite;
-        itemCountText.text = count.ToString();
+        itemSpriteImage.sprite = itemStack.ItemType.ItemSprite;
+        itemCountText.text = itemStack.Count.ToString();
     }
 
     public void OnPointerDown(PointerEventData eventData)
